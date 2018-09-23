@@ -1,0 +1,24 @@
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark green scrolling-navbar ie-nav" [containerInside]="false">
+  <mdb-navbar-brand>
+    <a class="logo navbar-brand" href="#"><strong>IM Plate</strong></a>
+  </mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav">
+      <li class="nav-item waves-light" [ngClass]="{'active':( isActive() === 'dashboard' || isActive() === '') }" mdbWavesEffect>
+        <a class="nav-link" [routerLink]="['dashboard']">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': isActive() === 'bid'}" mdbWavesEffect>
+        <a class="nav-link" [routerLink]="['bid']">How To Bid</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': isActive() === 'purchase'}" mdbWavesEffect>
+        <a class="nav-link" [routerLink]="['purchase']">Purchase Direct</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': isActive() === 'about'}" mdbWavesEffect>
+        <a class="nav-link" [routerLink]="['about']">About Us</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': isActive() === 'contact'}" mdbWavesEffect>
+        <a class="nav-link" [routerLink]="['contact']">Contact Us</a>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>

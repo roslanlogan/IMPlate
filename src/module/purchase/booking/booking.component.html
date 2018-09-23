@@ -1,0 +1,43 @@
+<main style="margin-bottom: 65px;">
+  <div class="container" style="margin-top: 65px;">
+    <div class="card">
+      <div class="card-header">
+        Plate Number {{plateNum}}
+      </div>
+      <div class="card-body">
+        <p>Please confirm the following information is correct then click on "Confirm" to continue.</p>
+        <!-- Default form register -->
+        <form class="text-center p-5">
+
+          <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Full Name">
+
+          <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="MyKad / Passport / Police / TenteraNo.">
+
+          <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Email">
+
+          <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Phone Number">
+
+    
+          <div class="row">
+            <div class="col-md-6 mx-auto d-flex justify-content-center">
+              <mdb-checkbox [default]="true">I confirm I have read and agree with the Terms & Conditions of the Q Plate purchase.</mdb-checkbox>
+            </div>
+          </div>
+
+          <!-- Sign up button -->
+          <button mdbBtn color="info" block="true" class="my-4" type="submit">Book</button>
+
+          <hr>
+
+          <!-- Terms of service -->
+          <p>By clicking
+            <em>Sign up</em> you agree to our
+            <a href="" target="_blank">terms of service</a> and
+            <a href="" target="_blank">terms of service</a>. </p>
+
+        </form>
+        <!-- Default form register -->
+      </div>
+    </div>
+  </div>
+</main>
