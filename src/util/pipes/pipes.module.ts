@@ -11,6 +11,7 @@ import { FilterPipe } from './filter.pipe';
 import { IsStringPipe } from './is-string.pipe';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { GroupByPipe } from './group.pipe';
+import { RoundPipe } from './round.pipe';
 
 
 @NgModule({
@@ -24,12 +25,14 @@ import { GroupByPipe } from './group.pipe';
     OrderPipe,
     IsStringPipe,
     SafeHtmlPipe,
-    GroupByPipe
+    GroupByPipe,
+    RoundPipe
   ],
   exports: [
     FilterPipe,
     OrderPipe,
-    GroupByPipe
+    GroupByPipe,
+    RoundPipe
   ],
   providers: []
 })
