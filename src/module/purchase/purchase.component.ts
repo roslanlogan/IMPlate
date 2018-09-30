@@ -46,6 +46,6 @@ export class PurchaseComponent implements OnInit {
   }
 
   proceedBooking(plateNumber){
-    this.router.navigate(['purchase/booking/'+plateNumber]);
+    // this.router.navigate(['purchase/booking/'+plateNumber]);
   }
 }

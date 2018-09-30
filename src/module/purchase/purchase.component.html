@@ -45,22 +45,21 @@
 
             <!--Table-->
             <table class="table table-striped">
-              <p>Unique Plates</p>
               <!--Table head-->
               <thead>
                 <tr>
-                  <th style="width:50%">Plate Number</th>
-                  <th style="width:15%;text-align: center;">Price</th>
+                  <th style="width:80%">Plate Number</th>
+                  <!-- <th style="width:15%;text-align: center;">Price</th> -->
                   <th style="width:15%;text-align: center;">Action</th>
                 </tr>
               </thead>
               <!--Table head-->
 
               <!--Table body-->
-              <tbody style="text-align:center">
+              <tbody>
                 <tr *ngFor="let data of search()">
-                  <td style="width:25%;font-weight: 900;">{{data.plateNum}}</td>
-                  <td style="width:15%;text-align: center;font-weight: 900;">{{data.price}}</td>
+                  <td style="width:80%;font-weight: 900;text-align: start;padding-left: 5%">{{data.plateNum}}</td>
+                  <!-- <td style="width:15%;text-align: center;font-weight: 900;">{{data.price}}</td> -->
                   <td style="width:15%;text-align: center;"><button mdbBtn color="indigo" size="sm" mdbWavesEffect type="button"
                       class="m-0" (click)="proceedBooking(data.plateNum)">Book Now</button></td>
                 </tr>
