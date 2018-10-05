@@ -6,3 +6,33 @@
 .page-footer {
     background-color: #22BE12 !important;
 }
+
+
+@media screen and (min-width: 600px) {
+    .carousel-inner {
+        width: 85% !important;
+        margin:auto !important;
+    }
+    .w-100 {
+        width: 90% !important;
+        margin: auto !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .carousel-inner {
+        width: 100% !important;
+        margin:auto !important;
+    }
+    .w-100 {
+        width: 100% !important;
+        margin: auto !important;
+    }
+}
+
+.card-heighten{
+    height: 100% !important;
+}
+.contact-form-error{
+    margin:0 !important;
+    color:red
+}

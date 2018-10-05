@@ -8,23 +8,85 @@ import { Router } from '@angular/router';
 })
 export class PurchaseComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
   searchText: string;
-  tableData = [
-    { plateNum: 'Q100', price: 'RM12000' },
-    { plateNum: 'Q103', price: 'RM12000' },
-    { plateNum: 'Q200', price: 'RM12000' },
-    { plateNum: 'Q600', price: 'RM12000' },
-    { plateNum: 'Q203', price: 'RM12000' },
-    { plateNum: 'Q300', price: 'RM12000' },
-    { plateNum: 'Q600', price: 'RM12000' },
-    { plateNum: 'Q203', price: 'RM12000' },
-    { plateNum: 'Q300', price: 'RM12000' },
-    { plateNum: 'Q600', price: 'RM12000' },
-    { plateNum: 'Q203', price: 'RM12000' },
-    { plateNum: 'Q300', price: 'RM12000' },
-    { plateNum: 'Q600', price: 'RM12000' },
+  tableDataDiamon = [];
+
+  tableDataPlatinum = [
+    { plateNum: 'IM100', price: 'RM12000' },
+    { plateNum: 'IM103', price: 'RM12000' },
+    { plateNum: 'IM200', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
   ];
+
+  tableDataGold = [
+    { plateNum: 'IM100', price: 'RM12000' },
+    { plateNum: 'IM103', price: 'RM12000' },
+    { plateNum: 'IM200', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },];
+
+  tableDataSuperSilver = [
+    { plateNum: 'IM100', price: 'RM12000' },
+    { plateNum: 'IM103', price: 'RM12000' },
+    { plateNum: 'IM200', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },];
+
+  tableDataSilver = [
+    { plateNum: 'IM100', price: 'RM12000' },
+    { plateNum: 'IM103', price: 'RM12000' },
+    { plateNum: 'IM200', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },];
+
+  tableDataSuperBronze = [
+    { plateNum: 'IM100', price: 'RM12000' },
+    { plateNum: 'IM103', price: 'RM12000' },
+    { plateNum: 'IM200', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },
+    { plateNum: 'IM203', price: 'RM12000' },
+    { plateNum: 'IM300', price: 'RM12000' },
+    { plateNum: 'IM600', price: 'RM12000' },];
 
   filterIt(arr, searchKey) {
     return arr.filter((obj) => {
@@ -36,16 +98,16 @@ export class PurchaseComponent implements OnInit {
 
   search() {
     if (!this.searchText) {
-      return this.tableData;
+      return this.tableDataSuperBronze;
     }
     if (this.searchText) {
-      return this.filterIt(this.tableData, this.searchText);
+      return this.filterIt(this.tableDataSuperBronze, this.searchText);
     }
   }
   ngOnInit() {
   }
 
-  proceedBooking(plateNumber){
-    // this.router.navigate(['purchase/booking/'+plateNumber]);
+  proceedBooking(plateNumber) {
+    window.open('https://drive.google.com/file/d/13lqsb_LejRAlG7J6qFyxAH_kmmXUCxn-/view?usp=sharing', '_blank');
   }
 }

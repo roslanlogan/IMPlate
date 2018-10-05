@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  url:"http://implate.com.my/api/v1",
   production: false
 };
 

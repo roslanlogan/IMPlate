@@ -3,29 +3,39 @@
     <div class="row">
       <div class="col-lg-6 col-md-6">
 
-        <div class="card">
+        <div class="card card-heighten">
           <h5 class="card-header" style="text-align: center;">Feedback/Inquiry</h5>
           <div class="card-body">
-            <form class="text-center p-5">
+            <form class="text-center p-5" [formGroup]="mailForm">
 
-              <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+              <input type="text" id="defaultContactFormName" formControlName="name" class="form-control mb-4"
+                placeholder="Name">
 
-              <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+              <input type="email" id="defaultContactFormEmail" formControlName="mail" [pattern]="emailPattern" class="form-control mb-4"
+                placeholder="E-mail">
 
-              <input type="number" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Phone Number">
+              <input type="number" id="defaultContactFormEmail" formControlName="phone" class="form-control mb-4"
+                placeholder="Phone Number">
 
               <div class="form-group">
-                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" formControlName="msg" rows="3"
+                  placeholder="Message"></textarea>
               </div>
-              <div class="row">
-                <div class="col-md-6 mx-auto d-flex justify-content-center">
-                  <div class="custom-control custom-checkbox mb-4">
-                    <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
-                    <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
-                  </div>
+              <div class="row" style="text-align:start">
+                <div class="col-md-12" *ngIf="mailForm.get('name').invalid && (mailForm.get('name').dirty || mailForm.get('name').touched)">
+                  <label class="contact-form-error">*Name field is required</label>
+                </div>
+                <div class="col-md-12" *ngIf="mailForm.get('mail').invalid && (mailForm.get('mail').dirty || mailForm.get('mail').touched)">
+                  <label class="contact-form-error">*E-mail field is required/Invalid Format</label>
+                </div>
+                <div class="col-md-12" *ngIf="mailForm.get('phone').invalid && (mailForm.get('phone').dirty || mailForm.get('phone').touched)">
+                  <label class="contact-form-error">*Phone Number field is required</label>
+                </div>
+                <div class="col-md-12" *ngIf="mailForm.get('msg').invalid && (mailForm.get('msg').dirty || mailForm.get('msg').touched)">
+                  <label class="contact-form-error">*Message field is required</label>
                 </div>
               </div>
-              <button class="btn btn-info btn-block" type="submit">Send</button>
+              <button class="btn btn-info btn-block" (click)="sendMail(mailForm.value)">Send</button>
 
             </form>
           </div>
@@ -42,7 +52,7 @@
                     <div class="card-body text-center">
                       <i class="fa fa-phone ico-font" aria-hidden="true"></i>
                       <h4 class="text-uppercase">call us</h4>
-                      <p>+03-8322 3600(Tel), +03-8322 7500(Fax)</p>
+                      <p>+03-8322 3600(Tel), +03-8322 7500(Fax), +6016-289 3735(En.Hilmi), +6019-700 3979(En.Yusman) </p>
                     </div>
                   </div>
                 </div>
@@ -51,7 +61,8 @@
                     <div class="card-body text-center">
                       <i class="fa fa-map-marker ico-font" aria-hidden="true"></i>
                       <h4 class="text-uppercase">office location</h4>
-                      <address>NFORT MSC SDN BHD, Plaza 138(Annexed to Hotel Maya), 138 Jalan Ampang, 50450 Kuala Lumpur </address>
+                      <address>NFORT MSC SDN BHD, Suite 19.06 & 19.07,Suite 19.06 & 19.07, Level 19, Plaza 138(Annexed to Hotel Maya), 138 Jalan Ampang, 50450 Kuala
+                        Lumpur </address>
                     </div>
                   </div>
                 </div>
@@ -60,7 +71,7 @@
                     <div class="card-body text-center">
                       <i class="fa fa-globe ico-font" aria-hidden="true"></i>
                       <h4 class="text-uppercase">email</h4>
-                      <p>http://al.a.noman1416@gmail.com</p>
+                      <p>admin@implate.com.my</p>
                     </div>
                   </div>
                 </div>

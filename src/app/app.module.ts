@@ -17,6 +17,8 @@ import { PurchaseComponent } from '../module/purchase/purchase.component';
 import { AboutUsComponent } from '../module/about-us/about-us.component';
 import { ContactUsComponent } from '../module/contact-us/contact-us.component';
 import { BookingComponent } from '../module/purchase/booking/booking.component';
+import { HttpModule } from '@angular/http';
+import {ToasterModule, ToasterService} from 'angular2-toaster';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { BookingComponent } from '../module/purchase/booking/booking.component';
     FormsModule,
     ReactiveFormsModule,
     PipesModule,
+    HttpModule,
+    ToasterModule.forRoot(),
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
