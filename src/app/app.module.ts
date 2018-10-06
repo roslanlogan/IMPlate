@@ -32,7 +32,7 @@ import {ToasterModule, ToasterService} from 'angular2-toaster';
     PurchaseComponent,
     AboutUsComponent,
     ContactUsComponent,
-    BookingComponent
+    BookingComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { PLATINUM_DATA } from '../data/platinum';
+import { DIAMOND_DATA } from '../data/diamond';
+import { GOLD_DATA } from '../data/gold';
+import { SILVER_DATA } from '../data/silver';
+import { SUPER_SILVER_DATA } from '../data/superSilver';
+import { SUPER_BRONZE_DATA } from '../data/superBronze';
+import { BRONZE_DATA } from '../data/bronze';
 @Component({
   selector: 'app-purchase',
   templateUrl: './purchase.component.html',
@@ -10,83 +16,7 @@ export class PurchaseComponent implements OnInit {
 
   constructor(private router: Router) { }
   searchText: string;
-  tableDataDiamon = [];
-
-  tableDataPlatinum = [
-    { plateNum: 'IM100', price: 'RM12000' },
-    { plateNum: 'IM103', price: 'RM12000' },
-    { plateNum: 'IM200', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-  ];
-
-  tableDataGold = [
-    { plateNum: 'IM100', price: 'RM12000' },
-    { plateNum: 'IM103', price: 'RM12000' },
-    { plateNum: 'IM200', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },];
-
-  tableDataSuperSilver = [
-    { plateNum: 'IM100', price: 'RM12000' },
-    { plateNum: 'IM103', price: 'RM12000' },
-    { plateNum: 'IM200', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },];
-
-  tableDataSilver = [
-    { plateNum: 'IM100', price: 'RM12000' },
-    { plateNum: 'IM103', price: 'RM12000' },
-    { plateNum: 'IM200', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },];
-
-  tableDataSuperBronze = [
-    { plateNum: 'IM100', price: 'RM12000' },
-    { plateNum: 'IM103', price: 'RM12000' },
-    { plateNum: 'IM200', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },
-    { plateNum: 'IM203', price: 'RM12000' },
-    { plateNum: 'IM300', price: 'RM12000' },
-    { plateNum: 'IM600', price: 'RM12000' },];
+  tableData = this.addPlateNum(DIAMOND_DATA);
 
   filterIt(arr, searchKey) {
     return arr.filter((obj) => {
@@ -98,16 +28,42 @@ export class PurchaseComponent implements OnInit {
 
   search() {
     if (!this.searchText) {
-      return this.tableDataSuperBronze;
+      return this.tableData;
     }
     if (this.searchText) {
-      return this.filterIt(this.tableDataSuperBronze, this.searchText);
+      return this.filterIt(this.tableData, this.searchText);
     }
   }
   ngOnInit() {
   }
 
+  selectedType(type) {
+    console.log(type.target.value)
+    if (type.target.value == 1) {
+      this.tableData = this.addPlateNum(DIAMOND_DATA);
+    } else if (type.target.value == 2) {
+      this.tableData = this.addPlateNum(PLATINUM_DATA);
+    } else if (type.target.value == 3) {
+      this.tableData = this.addPlateNum(SUPER_SILVER_DATA);
+    } else if (type.target.value == 4) {
+      this.tableData = this.addPlateNum(SILVER_DATA);
+    } else if (type.target.value == 5) {
+      this.tableData = this.addPlateNum(SUPER_BRONZE_DATA);
+    } else if (type.target.value == 5) {
+      this.tableData = this.addPlateNum(BRONZE_DATA);
+    }
+  }
+
+  addPlateNum(data) {
+    console.log(data)
+    data.forEach(data => {
+      if (data.plateNum.indexOf("IM") == -1) {
+        data.plateNum = "IM" + data.plateNum;
+      }
+    })
+    return data;
+  }
   proceedBooking(plateNumber) {
-    window.open('https://drive.google.com/file/d/13lqsb_LejRAlG7J6qFyxAH_kmmXUCxn-/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/uc?export=download&id=13lqsb_LejRAlG7J6qFyxAH_kmmXUCxn-', '_blank');
   }
 }
