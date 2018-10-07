@@ -18,9 +18,9 @@ export class DashboardContainerComponent implements OnInit {
 
   download(i) {
     if (i == 1) {
-      window.open('https://drive.google.com/open?id=1ECdc5aQXgD1jvk1w-4vTPQAzedW_OZQp', '_blank'); //price sheet
+      window.open('https://drive.google.com/open?id=1OMryT8b9dawfhUqaKTrdbuf6rtiHuu6G', '_blank'); //price sheet
     } else {
-      window.open('https://drive.google.com/uc?export=download&id=13lqsb_LejRAlG7J6qFyxAH_kmmXUCxn-', '_blank'); //tender form
+      window.open('https://drive.google.com/uc?export=download&id=1dar5ywEgtlxnTEMBdcHjrWFrzJgnSBVf', '_blank'); //tender form
     }
   }
 }
