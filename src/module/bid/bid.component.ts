@@ -14,9 +14,9 @@ export class BidComponent implements OnInit {
 
   download(i) {
     if (i == 1) {
-      window.open('https://drive.google.com/open?id=1OMryT8b9dawfhUqaKTrdbuf6rtiHuu6G', '_blank'); //price sheet
+      window.open('https://drive.google.com/open?id=1cKlATFnNH645mL0tMi-WX5RgZUcp6CyQ', '_blank'); //price sheet
     } else {
-      window.open('https://drive.google.com/uc?export=download&id=1dar5ywEgtlxnTEMBdcHjrWFrzJgnSBVf', '_blank'); //tender form
+      window.open('https://drive.google.com/uc?export=download&id=1yomOb78YK_C5zP1Och8hEo5HP2PHZluv', '_blank'); //tender form
     }
   }
 }

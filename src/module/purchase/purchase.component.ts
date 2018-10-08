@@ -64,6 +64,6 @@ export class PurchaseComponent implements OnInit {
     return data;
   }
   proceedBooking(plateNumber) {
-    window.open('https://drive.google.com/uc?export=download&id=1dar5ywEgtlxnTEMBdcHjrWFrzJgnSBVf', '_blank');
+    window.open('https://drive.google.com/uc?export=download&id=1yomOb78YK_C5zP1Och8hEo5HP2PHZluv', '_blank');
   }
 }
