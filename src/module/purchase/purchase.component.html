@@ -3,7 +3,7 @@
     <div class="row" style="margin:auto">
       <div class="alert alert-warning" style="width: 100%;" role="alert">
         <h4 class="alert-heading">Announcement!</h4>
-        <table class="tg" >
+        <table class="tg">
           <tr>
             <th class="tg-l2oz">Tender START Date</th>
             <th class="tg-1wig">&nbsp;:&nbsp;01 Oktober 2018</th>
@@ -70,10 +70,18 @@
               <!--Table head-->
 
               <!--Table body-->
-              <tbody>
+              <tbody *ngIf="tableData">
                 <tr *ngFor="let data of search()">
                   <td style="width:70%;font-weight: 900;text-align: start;padding-left: 5%">{{data.plateNum}}</td>
                   <td style="width:15%;text-align: center;font-weight: 900;">{{data.price}}</td>
+                  <td style="width:15%;text-align: center;"><button mdbBtn color="indigo" size="sm" mdbWavesEffect type="button"
+                      class="m-0" (click)="proceedBooking(data.plateNum)">Book Now</button></td>
+                </tr>
+              </tbody>
+              <tbody *ngIf="!tableData">
+                <tr>
+                  <td style="width:70%;font-weight: 900;text-align: start;padding-left: 5%">Others</td>
+                  <td style="width:15%;text-align: center;font-weight: 900;">{{getPriceIfNotExist(selected)}}</td>
                   <td style="width:15%;text-align: center;"><button mdbBtn color="indigo" size="sm" mdbWavesEffect type="button"
                       class="m-0" (click)="proceedBooking(data.plateNum)">Book Now</button></td>
                 </tr>
